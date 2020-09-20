@@ -1,0 +1,6 @@
+# Ignore .idea and .DS_Store file
+*.idea
+*.DS_Store
+/Models/**
+/gpt2/**
+/distilgpt2/**
