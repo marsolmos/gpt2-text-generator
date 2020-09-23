@@ -79,7 +79,23 @@ function sendRequest(input) {
 
     if (input.length>1)
     {
-        // TODO
+        // Build data json
+        var data = JSON.stringify({"input": input});
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            var data = JSON.parse(this.responseText)
+            displayedPrediction(data.body)
+          }
+        });
+
+        // Request prediction
+        xhr.open("POST", conf.APP_URL + conf.ROUTE);
+
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(data)
     }
 }
 
