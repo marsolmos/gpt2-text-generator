@@ -18,9 +18,9 @@ N_TOKENS = int(os.environ.get('N_TOKENS', 20))
 
 
 data_env = {
-        "APP_URL": "{}:{}".format(HOST, PORT) if 'localhost' in HOST
-        else "{}".format(HOST),
-        "ROUTE": "/{}".format(ROUTE_GENERATE),
+    "APP_URL": "{}:{}".format(HOST, PORT) if 'localhost' in HOST
+    else "{}".format(HOST),
+    "ROUTE": "/{}".format(ROUTE_GENERATE),
 }
 
 # Save env.json file
@@ -54,10 +54,10 @@ def prediction():
 
     return flask.jsonify({
         'version': 'v1.0.0',
-        'body': {'query':income_query,
+        'body': {'query': income_query,
                  'generated': generated,
                  'result': res}
-                 }), 200
+        }), 200
 
 
 @app.route('/health_liveness')
@@ -72,7 +72,7 @@ def health_check():
     return flask.jsonify({'status': 'success'}), 200
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host='0.0.0.0',
             debug=True,
             port=PORT)

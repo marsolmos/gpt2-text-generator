@@ -49,12 +49,10 @@ function onKeyDown(e) {
 
 // Colorize boxes
 function displayPrediction(textGenerated) {
-    if (textGenerated.generated == "lang_det_err"){
-            document.getElementById("prediction").innerHTML = '<span style="font-weight: bold; color: #fda085;">Sorry, only supports english</span>'
-    } else {
-        generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
-        document.getElementById("prediction").innerHTML = textGenerated.query + generated
-    }
+
+      generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
+      document.getElementById("prediction").innerHTML = textGenerated.query + generated
+
 }
 
 // Function to autogenerate
@@ -85,17 +83,17 @@ function sendRequest(input) {
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", function () {
-          if (this.readyState === 4) {
+        if (this.readyState === 4) {
             var data = JSON.parse(this.responseText)
             displayPrediction(data.body)
-          }
+            }
         });
 
         // Request prediction
         xhr.open("POST", conf.APP_URL + conf.ROUTE);
 
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(data)
+        xhr.send(data);
     }
 }
 

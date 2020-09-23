@@ -32,6 +32,6 @@ def generate(user_text, size=20):
     # Send to cpu/gpu
     tokens = torch.tensor([tokens]).to(device)
 
-    tokens = model.generate(tokens, max_length=size + tokens.shape[1], do_sample=True, top_k=50)
+    tokens = model.generate(tokens, max_length=size+tokens.shape[1], do_sample=True, top_k=50)
     tokens = tokens[0].tolist()
     return tokenizer.decode(tokens, skip_special_tokens=True)
