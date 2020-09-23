@@ -8,6 +8,10 @@ torch.set_grad_enabled(False)
 # Check if gpu or cpu
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+# # Save model into folder
+# GPT2LMHeadModel.from_pretrained('distilgpt2').save_pretrained('./distilgpt2')
+# GPT2Tokenizer.from_pretrained('distilgpt2').save_pretrained('./distilgpt2')
+
 # Load tokenizer and model
 tokenizer = GPT2Tokenizer.from_pretrained("./distilgpt2")
 model = GPT2LMHeadModel.from_pretrained("./distilgpt2", pad_token_id=tokenizer.eos_token_id)

@@ -87,7 +87,7 @@ function sendRequest(input) {
         xhr.addEventListener("readystatechange", function () {
           if (this.readyState === 4) {
             var data = JSON.parse(this.responseText)
-            displayedPrediction(data.body)
+            displayPrediction(data.body)
           }
         });
 
