@@ -12,5 +12,5 @@ ADD ./src ./
 
 CMD ["python", "-u", "app.py"]
 
-#docker tag text-generator-gpt2:latest eu.gcr.io/text-generator-gpt-2/text-generator-gpt2:latest
-#docker push eu.gcr.io/text-generator-gpt-2/text-generator-gpt2:latest
+#docker tag gpt2-text-generator:latest eu.gcr.io/gpt-2-text-generator/gpt2-text-generator:latest
+#docker push eu.gcr.io/gpt-2-text-generator/gpt2-text-generator:latest

@@ -50,7 +50,7 @@ function onKeyDown(e) {
 // Colorize boxes
 function displayPrediction(textGenerated) {
 
-      generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
+      generated = '<span style="font-weight: bold; color: #ED5565;">' + textGenerated.generated + '</span>'
       document.getElementById("prediction").innerHTML = textGenerated.query + generated
 
 }
